@@ -10,26 +10,41 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\tiledsprite">
+      <UniqueIdentifier>{f3b74a47-af5d-44ee-b93c-a4732abde0cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\tiledsprite">
+      <UniqueIdentifier>{1ff4a7e2-01ca-4d67-bb0c-c6f469608b9d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="..\Classes\tiledsprite\TiledSprite.cpp">
+      <Filter>src\tiledsprite</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="..\Classes\tiledsprite\AppDelegate.cpp">
+      <Filter>src\tiledsprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tiledsprite\MainMenuScene.cpp">
+      <Filter>src\tiledsprite</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\Classes\tiledsprite\TiledSprite.h">
+      <Filter>src\tiledsprite</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
+    <ClInclude Include="..\Classes\tiledsprite\MainMenuScene.h">
+      <Filter>src\tiledsprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tiledsprite\AppDelegate.h">
+      <Filter>src\tiledsprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameResources.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
@@ -37,5 +52,10 @@
     <ResourceCompile Include="game.rc">
       <Filter>resource</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\tiledsprite\brick.png">
+      <Filter>resource\tiledsprite</Filter>
+    </Image>
   </ItemGroup>
 </Project>

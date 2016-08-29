@@ -1,9 +1,10 @@
 #include "main.h"
-#include "tiledsprite\AppDelegate.h"
+// #include "tiledsprite\AppDelegate.h"
+#include "maskedsprite\AppDelegate.h"
 #include "cocos2d.h"
 
 USING_NS_CC;
-using namespace tiledsprite;
+using namespace maskedsprite;
 
 #if _MSC_VER > 1800
 #pragma comment(lib,"libcocos2d_2015.lib")

@@ -16,6 +16,12 @@
     <Filter Include="resource\tiledsprite">
       <UniqueIdentifier>{1ff4a7e2-01ca-4d67-bb0c-c6f469608b9d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="resource\maskedsprite">
+      <UniqueIdentifier>{fe5c095d-89a1-4aa1-850a-6d1c407b3e49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\maskedsprite">
+      <UniqueIdentifier>{da223584-9695-4007-86bd-eb386ea008a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -29,6 +35,15 @@
     </ClCompile>
     <ClCompile Include="..\Classes\tiledsprite\MainMenuScene.cpp">
       <Filter>src\tiledsprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\maskedsprite\MainMenuScene.cpp">
+      <Filter>src\maskedsprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\maskedsprite\AppDelegate.cpp">
+      <Filter>src\maskedsprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\maskedsprite\MaskedSprite.cpp">
+      <Filter>src\maskedsprite</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +62,15 @@
     <ClInclude Include="..\Classes\GameResources.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\maskedsprite\AppDelegate.h">
+      <Filter>src\maskedsprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\maskedsprite\MainMenuScene.h">
+      <Filter>src\maskedsprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\maskedsprite\MaskedSprite.h">
+      <Filter>src\maskedsprite</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
@@ -57,5 +81,22 @@
     <Image Include="..\Resources\tiledsprite\brick.png">
       <Filter>resource\tiledsprite</Filter>
     </Image>
+    <Image Include="..\Resources\maskedsprite\fps_images-hd.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
+    <Image Include="..\Resources\maskedsprite\fps_images-ipadhd.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
+    <Image Include="..\Resources\maskedsprite\stickman.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
+    <Image Include="..\Resources\maskedsprite\fps_images.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\maskedsprite\Mask.fsh">
+      <Filter>src\maskedsprite</Filter>
+    </None>
   </ItemGroup>
 </Project>

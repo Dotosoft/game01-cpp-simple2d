@@ -102,3 +102,24 @@ TiledSprite::TiledSprite(Sprite * p_sprite, int p_width, int p_height)
 		}
 	}
 }
+
+Sprite * TiledSprite::createWithImage(Image * img, int p_width, int p_height)
+{
+	// auto sprite = Sprite::create(RESOURCES_TILED_IMAGE_BRICK);
+	auto texture = new Texture2D();
+	texture->initWithImage(img);
+
+	// Method 1
+	Texture2D::TexParams params;
+	params.minFilter = GL_LINEAR;
+	params.magFilter = GL_LINEAR;
+	params.wrapS = GL_REPEAT;
+	params.wrapT = GL_REPEAT;
+	// Method 2
+	// Texture2D::TexParams params = { GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT };
+
+	auto sprite = Sprite::createWithTexture(texture, Rect(0, 0, p_width, p_height));
+	sprite->getTexture()->setTexParameters(params);
+
+	return sprite;
+}

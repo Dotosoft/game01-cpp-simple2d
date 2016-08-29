@@ -43,19 +43,24 @@ bool MainMenuScene::init()
 	skinnySprite->setPosition(Vec2(84, 100));
 	this->addChild(skinnySprite);
 
-	auto longSprite = new TiledSprite(sourceSprite, 100, 20);
+	auto longSprite = new TiledSprite(sourceSprite, 30, 20);
 	longSprite->setAnchorPoint(Vec2::ZERO);
 	longSprite->setPosition(Vec2(102, 100));
 	this->addChild(longSprite);
 
-	auto bigSprite = new TiledSprite(sourceSprite, 160, 120);
+	auto bigSprite = new TiledSprite(sourceSprite, 30, 50);
 	bigSprite->setAnchorPoint(Vec2::ZERO);
-	bigSprite->setPosition(Vec2(210, 100));
+	bigSprite->setPosition(Vec2(140, 100));
 	this->addChild(bigSprite);
 
-    return true;
-}
+	// auto sprite = Sprite::create(RESOURCES_TILED_IMAGE_BRICK);
 
-void MainMenuScene::GoToGameScene( cocos2d::Ref *sender )
-{
+	auto img = new Image();
+	img->initWithImageFile(RESOURCES_TILED_IMAGE_BRICK);
+	auto spriteWithTexParam = TiledSprite::createWithImage(img, 100, 100);
+	spriteWithTexParam->setAnchorPoint(Vec2::ZERO);
+	spriteWithTexParam->setPosition(Vec2(178, 100));
+	this->addChild(spriteWithTexParam);
+
+    return true;
 }

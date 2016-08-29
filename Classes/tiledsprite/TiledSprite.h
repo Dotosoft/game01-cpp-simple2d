@@ -34,6 +34,7 @@ namespace tiledsprite {
 			int height;
 		public:
 			TiledSprite(Sprite* p_sprite, int p_width, int p_height);
+			static Sprite * createWithImage(Image* img, int p_width, int p_height);
 	};
 }
 

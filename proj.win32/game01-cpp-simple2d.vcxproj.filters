@@ -25,6 +25,9 @@
     <Filter Include="resource\flappy\fonts">
       <UniqueIdentifier>{5d71bfcf-dd7d-4988-b702-3f3fe7d63e13}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\clipsprite">
+      <UniqueIdentifier>{d2ddf5c7-f15c-4d8d-b959-1b1428370cf3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -38,6 +41,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\maskedsprite\MaskedSprite.cpp">
       <Filter>src\maskedsprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\clipsprite\AppDelegate.cpp">
+      <Filter>src\clipsprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\clipsprite\MainMenuScene.cpp">
+      <Filter>src\clipsprite</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +64,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\maskedsprite\MaskedSprite.h">
       <Filter>src\maskedsprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\clipsprite\AppDelegate.h">
+      <Filter>src\clipsprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\clipsprite\MainMenuScene.h">
+      <Filter>src\clipsprite</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

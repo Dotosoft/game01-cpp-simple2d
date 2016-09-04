@@ -13,21 +13,21 @@ MaskedSprite * MaskedSprite::createWithSprite(Sprite* sprite, std::string andIma
 	}
 
 	GLchar * fragmentSource = (GLchar*)String::createWithContentsOfFile(FileUtils::getInstance()->fullPathForFilename("maskedsprite/Mask.fsh").c_str())->getCString();
-	sprite->getShaderProgram()->initWithByteArrays(ccPositionTextureA8Color_vert, fragmentSource);
+	sprite->getGLProgram()->initWithByteArrays(ccPositionTextureA8Color_vert, fragmentSource);
 	// self->getShaderProgram()->initWithByteArrays(ccPositionTextureColor_noMVP_vert, fragmentSource);
 
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORD);
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
-	self->getShaderProgram()->link();
-	self->getShaderProgram()->updateUniforms();
+	self->getGLProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
+	self->getGLProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORD);
+	self->getGLProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
+	self->getGLProgram()->link();
+	self->getGLProgram()->updateUniforms();
 
-	self->setMaskLocation(glGetUniformLocation(self->getShaderProgram()->getProgram(), "u_overlayTexture"));
+	self->setMaskLocation(glGetUniformLocation(self->getGLProgram()->getProgram(), "u_overlayTexture"));
 	glUniform1i(self->getMaskLocation(), 1);
 	self->setMaskTexture(TextureCache::getInstance()->addImage(andImageOverlay));
 	self->getMaskTexture()->setAliasTexParameters();
 
-	self->getShaderProgram()->use();
+	self->getGLProgram()->use();
 	ccGLBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glActiveTexture(GL_TEXTURE1);
 	glBindTexture(GL_TEXTURE_2D, self->getMaskTexture()->getName());
@@ -49,9 +49,9 @@ MaskedSprite * MaskedSprite::createWithSprite(Sprite* sprite, Sprite* andMaskSpr
 	GLchar * fragmentSource = (GLchar*)String::createWithContentsOfFile(FileUtils::getInstance()->fullPathForFilename("maskedsprite/Mask.fsh").c_str())->getCString();
 	self->getShaderProgram()->initWithByteArrays(ccPositionTextureA8Color_vert, fragmentSource);
 
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORD);
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
+	self->getShaderProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
+	self->getShaderProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORD);
+	self->getShaderProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
 	self->getShaderProgram()->link();
 	self->getShaderProgram()->updateUniforms();
 
@@ -82,9 +82,9 @@ MaskedSprite * MaskedSprite::createWithFile(std::string file, Sprite* andMaskSpr
 	GLchar * fragmentSource = (GLchar*)String::createWithContentsOfFile(FileUtils::getInstance()->fullPathForFilename("maskedsprite/Mask.fsh").c_str())->getCString();
 	self->getShaderProgram()->initWithByteArrays(ccPositionTextureA8Color_vert, fragmentSource);
 
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORD);
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
+	self->getShaderProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
+	self->getShaderProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORD);
+	self->getShaderProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
 	self->getShaderProgram()->link();
 	self->getShaderProgram()->updateUniforms();
 
@@ -113,20 +113,20 @@ MaskedSprite * MaskedSprite::createWithFile(std::string file, std::string maskFi
 	}
 
 	GLchar * fragmentSource = (GLchar*)String::createWithContentsOfFile(FileUtils::getInstance()->fullPathForFilename("maskedsprite/Mask.fsh").c_str())->getCString();
-	self->getShaderProgram()->initWithByteArrays(ccPositionTextureA8Color_vert, fragmentSource);
+	self->getGLProgram()->initWithByteArrays(ccPositionTextureA8Color_vert, fragmentSource);
 
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORD);
-	self->getShaderProgram()->addAttribute(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
-	self->getShaderProgram()->link();
-	self->getShaderProgram()->updateUniforms();
+	self->getGLProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
+	self->getGLProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORD);
+	self->getGLProgram()->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
+	self->getGLProgram()->link();
+	self->getGLProgram()->updateUniforms();
 
-	self->setMaskLocation(glGetUniformLocation(self->getShaderProgram()->getProgram(), "u_overlayTexture"));
+	self->setMaskLocation(glGetUniformLocation(self->getGLProgram()->getProgram(), "u_overlayTexture"));
 	glUniform1i(self->getMaskLocation(), 1);
 	self->setMaskTexture(TextureCache::getInstance()->addImage(maskFile));
 	self->getMaskTexture()->setAliasTexParameters();
 
-	self->getShaderProgram()->use();
+	self->getGLProgram()->use();
 	ccGLBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glActiveTexture(GL_TEXTURE1);
 	glBindTexture(GL_TEXTURE_2D, self->getMaskTexture()->getName());

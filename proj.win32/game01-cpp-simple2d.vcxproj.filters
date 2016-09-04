@@ -10,9 +10,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\tiledsprite">
-      <UniqueIdentifier>{f3b74a47-af5d-44ee-b93c-a4732abde0cb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="resource\tiledsprite">
       <UniqueIdentifier>{1ff4a7e2-01ca-4d67-bb0c-c6f469608b9d}</UniqueIdentifier>
     </Filter>
@@ -22,19 +19,16 @@
     <Filter Include="src\maskedsprite">
       <UniqueIdentifier>{da223584-9695-4007-86bd-eb386ea008a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="resource\flappy">
+      <UniqueIdentifier>{09274a69-d7d5-4440-84c3-c7bf51acb43c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\flappy\fonts">
+      <UniqueIdentifier>{5d71bfcf-dd7d-4988-b702-3f3fe7d63e13}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\tiledsprite\TiledSprite.cpp">
-      <Filter>src\tiledsprite</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\tiledsprite\AppDelegate.cpp">
-      <Filter>src\tiledsprite</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\tiledsprite\MainMenuScene.cpp">
-      <Filter>src\tiledsprite</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\maskedsprite\MainMenuScene.cpp">
       <Filter>src\maskedsprite</Filter>
@@ -49,15 +43,6 @@
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\tiledsprite\TiledSprite.h">
-      <Filter>src\tiledsprite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\tiledsprite\MainMenuScene.h">
-      <Filter>src\tiledsprite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\tiledsprite\AppDelegate.h">
-      <Filter>src\tiledsprite</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameResources.h">
       <Filter>src</Filter>
@@ -81,16 +66,40 @@
     <Image Include="..\Resources\tiledsprite\brick.png">
       <Filter>resource\tiledsprite</Filter>
     </Image>
+    <Image Include="..\Resources\maskedsprite\Default.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
+    <Image Include="..\Resources\maskedsprite\Default-Landscape~ipad.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
+    <Image Include="..\Resources\maskedsprite\fps_images.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
     <Image Include="..\Resources\maskedsprite\fps_images-hd.png">
       <Filter>resource\maskedsprite</Filter>
     </Image>
     <Image Include="..\Resources\maskedsprite\fps_images-ipadhd.png">
       <Filter>resource\maskedsprite</Filter>
     </Image>
-    <Image Include="..\Resources\maskedsprite\stickman.png">
+    <Image Include="..\Resources\maskedsprite\Icon.png">
       <Filter>resource\maskedsprite</Filter>
     </Image>
-    <Image Include="..\Resources\maskedsprite\fps_images.png">
+    <Image Include="..\Resources\maskedsprite\Icon%402x.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
+    <Image Include="..\Resources\maskedsprite\Icon-72.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
+    <Image Include="..\Resources\maskedsprite\Icon-Small.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
+    <Image Include="..\Resources\maskedsprite\Icon-Small%402x.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
+    <Image Include="..\Resources\maskedsprite\Icon-Small-50.png">
+      <Filter>resource\maskedsprite</Filter>
+    </Image>
+    <Image Include="..\Resources\maskedsprite\stickman.png">
       <Filter>resource\maskedsprite</Filter>
     </Image>
   </ItemGroup>
@@ -98,5 +107,22 @@
     <None Include="..\Classes\maskedsprite\Mask.fsh">
       <Filter>src\maskedsprite</Filter>
     </None>
+    <None Include="..\Resources\maskedsprite\Info.plist">
+      <Filter>resource\maskedsprite</Filter>
+    </None>
+    <None Include="..\Resources\maskedsprite\iTunesArtwork">
+      <Filter>resource\maskedsprite</Filter>
+    </None>
+    <None Include="..\Resources\maskedsprite\Mask.fsh">
+      <Filter>resource\maskedsprite</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\Resources\flappy\fonts\arial.ttf">
+      <Filter>resource\flappy\fonts</Filter>
+    </Font>
+    <Font Include="..\Resources\flappy\fonts\Marker Felt.ttf">
+      <Filter>resource\flappy\fonts</Filter>
+    </Font>
   </ItemGroup>
 </Project>

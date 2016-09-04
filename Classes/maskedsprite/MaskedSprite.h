@@ -12,18 +12,20 @@ namespace maskedsprite {
 
 	The reason for implement as private inheritance is to hide some interface call by Director.
 	*/
-	class  MaskedSprite : public cocos2d::Node
+	class  MaskedSprite : public cocos2d::Sprite
 	{
-		private:
-			CCTexture2D * _maskTexture;
-			GLuint _textureLocation;
-			GLuint _maskLocation;
 		public:
-			static Sprite * initWithSprite(Sprite* sprite, Sprite* maskSprite);
-			static Sprite * initWithSprite(Sprite* sprite, const char * maskFile);
-			static Sprite * initWithSpriteFrame(SpriteFrame * spriteFrame, const char * maskFile);
-			static Sprite * initWithFile(const char * file, const char * maskFile);
-			static Sprite * initWithFile(const char * file, SpriteFrame * mask);
+			static MaskedSprite * createWithSprite(Sprite* sprite, std::string andImageOverlay);
+			static MaskedSprite * createWithSprite(Sprite* sprite, Sprite* andMaskSprite);
+			static MaskedSprite * createWithFile(std::string file, Sprite* andMaskSprite);
+			static MaskedSprite * createWithFile(std::string file, std::string andImageOverlay);
+			// virtual void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags) override;
+			// virtual void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4 &transform, uint32_t flags) override;
+
+		private:
+			CC_SYNTHESIZE(Texture2D *, _maskTexture, MaskTexture);
+			CC_SYNTHESIZE(GLuint, _textureLocation, TextureLocation);
+			CC_SYNTHESIZE(GLuint, _maskLocation, MaskLocation);
 	};
 }
 

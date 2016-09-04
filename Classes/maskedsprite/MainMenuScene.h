@@ -13,7 +13,7 @@ namespace maskedsprite {
 	{
 
 		private:
-			Sprite * demoSprite;
+			MaskedSprite * demoSprite;
 			Sprite * normalSprite;
 			Sprite * overlaySprite;
 

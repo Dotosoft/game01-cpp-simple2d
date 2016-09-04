@@ -32,10 +32,10 @@ bool MainMenuScene::init()
 	Size size = Director::getInstance()->getWinSize();
 
 	// create and initialize a Label
-	auto label = Label::createWithTTF("HJMaskedSprite Demo", "Marker Felt", 55);
+	auto label = Label::createWithTTF("HJMaskedSprite Demo", RESOURCES_FLAPPY_FONT_MARKER, 55);
 
 	// position the label on the center of the screen
-	label->setPosition( Vec2(size.width / 2, size.height - label->boundingBox.size.height));
+	label->setPosition( Vec2(size.width / 2, size.height - label->getBoundingBox().size.height));
 
 	// add the label as a child to this Layer
 	this->addChild(label);
@@ -43,17 +43,17 @@ bool MainMenuScene::init()
 	//
 	// Masked Sprite with image overlaying text
 	//
-	demoSprite = MaskedSprite::initWithFile("stickman.png", "Default - Landscape~ipad.png");
+	demoSprite = MaskedSprite::createWithFile("maskedsprite/stickman.png", "maskedsprite/Default-Landscape~ipad.png");
 	demoSprite->setScale((size.width / 4) / demoSprite->getBoundingBox().size.width);
 	demoSprite->setPosition(Vec2(size.width - size.width / 4, size.height / 2));
 	this->addChild(demoSprite);
 
-	overlaySprite = Sprite::create("Default-Landscape~ipad.png");
+	overlaySprite = Sprite::create("maskedsprite/Default-Landscape~ipad.png");
 	overlaySprite->setScale((size.width / 6) / overlaySprite->getBoundingBox().size.width);
 	overlaySprite->setPosition(Vec2(size.width - size.width / 4 - overlaySprite->getBoundingBox().size.height, size.height / 2 - overlaySprite->getBoundingBox().size.height));
 	this->addChild(overlaySprite);
 
-	normalSprite = Sprite::create("stickman.png");
+	normalSprite = Sprite::create("maskedsprite/stickman.png");
 	normalSprite->setScale((size.width / 4) / normalSprite->getBoundingBox().size.width);
 	normalSprite->setPosition(ccp(size.width - size.width / 4 + overlaySprite->getBoundingBox().size.height / 2, size.height / 2 - overlaySprite->getBoundingBox().size.height));
 	this->addChild(normalSprite);
@@ -64,7 +64,7 @@ bool MainMenuScene::init()
 	// Overlaying Text Menu Item using blocks
 	auto itemOverText = MenuItemFont::create("Image overlaying Image", [&](Ref * sender) {
 		this->removeChild(demoSprite, true);
-		demoSprite = MaskedSprite::initWithFile("stickman.png", "Default - Landscape~ipad.png");
+		demoSprite = MaskedSprite::createWithFile("maskedsprite/stickman.png", "maskedsprite/Default-Landscape~ipad.png");
 		demoSprite->setScale((size.width / 4) / demoSprite->getBoundingBox().size.width);
 		demoSprite->setPosition(Vec2(size.width - size.width / 4, size.height / 2));
 		this->addChild(demoSprite);
@@ -73,7 +73,7 @@ bool MainMenuScene::init()
 	// Overlaying Text with Sprite Menu Item using blocks
 	auto itemOverTextWithSprite = MenuItemFont::create("Image overlaying text", [&](Ref * sender) {
 		this->removeChild(demoSprite, true);
-		auto demoLabel = Label::createWithTTF("Demo Text Overlay", "Arial", 40);
+		auto demoLabel = Label::createWithTTF("Demo Text Overlay", RESOURCES_FLAPPY_FONT_ARIAL, 40);
 		// demoSprite = MaskedSprite::initWithSprite(demoLabel, "Default-Landscape~ipad.png");
 		demoSprite->setScale((size.width / 4) / demoSprite->getBoundingBox().size.width);
 		demoSprite->setPosition(ccp(size.width - size.width / 4, size.height / 2));
@@ -83,9 +83,9 @@ bool MainMenuScene::init()
 	// Overlaying Image Menu Item using blocks
 	auto itemOverImage = MenuItemFont::create("Sprite overlaying Text", [&](Ref * sender) {
 		this->removeChild(demoSprite, true);
-		auto demoLabel = Label::createWithTTF("Demo Text Overlay", "Arial", 50);
-		auto tempSprite = Sprite::create("Icon@2x.png");
-		// demoSprite = MaskedSprite::initWithSprite(demoLabel, tempSprite);
+		auto demoLabel = Label::createWithTTF("Demo Text Overlay", RESOURCES_FLAPPY_FONT_ARIAL, 50);
+		auto tempSprite = Sprite::create("maskedsprite/Icon@2x.png");
+		demoSprite = MaskedSprite::createWithSprite(demoLabel, tempSprite);
 		demoSprite->setScale((size.width / 4) / demoSprite->getBoundingBox().size.width);
 		demoSprite->setPosition(Vec2(size.width - size.width / 4, size.height / 2));
 		this->addChild(demoSprite);

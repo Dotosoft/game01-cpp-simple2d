@@ -16,9 +16,6 @@
     <Filter Include="resource\maskedsprite">
       <UniqueIdentifier>{fe5c095d-89a1-4aa1-850a-6d1c407b3e49}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\maskedsprite">
-      <UniqueIdentifier>{da223584-9695-4007-86bd-eb386ea008a0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="resource\flappy">
       <UniqueIdentifier>{09274a69-d7d5-4440-84c3-c7bf51acb43c}</UniqueIdentifier>
     </Filter>
@@ -33,15 +30,6 @@
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\maskedsprite\MainMenuScene.cpp">
-      <Filter>src\maskedsprite</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\maskedsprite\AppDelegate.cpp">
-      <Filter>src\maskedsprite</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\maskedsprite\MaskedSprite.cpp">
-      <Filter>src\maskedsprite</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\clipsprite\AppDelegate.cpp">
       <Filter>src\clipsprite</Filter>
     </ClCompile>
@@ -55,15 +43,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameResources.h">
       <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\maskedsprite\AppDelegate.h">
-      <Filter>src\maskedsprite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\maskedsprite\MainMenuScene.h">
-      <Filter>src\maskedsprite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\maskedsprite\MaskedSprite.h">
-      <Filter>src\maskedsprite</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\clipsprite\AppDelegate.h">
       <Filter>src\clipsprite</Filter>
@@ -119,9 +98,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Classes\maskedsprite\Mask.fsh">
-      <Filter>src\maskedsprite</Filter>
-    </None>
     <None Include="..\Resources\maskedsprite\Info.plist">
       <Filter>resource\maskedsprite</Filter>
     </None>

@@ -1,7 +1,7 @@
-#include "maskedsprite\AppDelegate.h"
+#include "clipsprite\AppDelegate.h"
 
 USING_NS_CC;
-using namespace maskedsprite;
+using namespace clipsprite;
 
 static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
 static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 320);

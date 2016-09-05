@@ -1,13 +1,13 @@
-#ifndef _MASKEDSPRITE_APP_DELEGATE_H_
-#define _MASKEDSPRITE_APP_DELEGATE_H_
+#ifndef _CLIPSPRITE_APP_DELEGATE_H_
+#define _CLIPSPRITE_APP_DELEGATE_H_
 
 #include "cocos2d.h"
-#include "maskedsprite\MainMenuScene.h"
+#include "clipsprite\MainMenuScene.h"
 
 USING_NS_CC;
-using namespace maskedsprite;
+using namespace clipsprite;
 
-namespace maskedsprite {
+namespace clipsprite {
 
 /**
 	@brief    The cocos2d Application.
@@ -44,4 +44,4 @@ namespace maskedsprite {
 
 }
 
-#endif // _MASKEDSPRITE_APP_DELEGATE_H_
+#endif // _CLIPSPRITE_APP_DELEGATE_H_

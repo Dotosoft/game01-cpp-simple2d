@@ -1,22 +1,15 @@
-#ifndef _MASKEDSPRITE_MAIN_MENU_SCENE_H_
-#define _MASKEDSPRITE_MAIN_MENU_SCENE_H_
+#ifndef _CLIPSPRITE_MAIN_MENU_SCENE_H_
+#define _CLIPSPRITE_MAIN_MENU_SCENE_H_
 
 #include "cocos2d.h"
-#include "maskedsprite\MaskedSprite.h"
 #include "GameResources.h"
 
 USING_NS_CC;
 
-namespace maskedsprite {
+namespace clipsprite {
 
 	class MainMenuScene : public cocos2d::Layer
 	{
-
-		private:
-			MaskedSprite * demoSprite;
-			Sprite * normalSprite;
-			Sprite * overlaySprite;
-
 		public:
 			// there's no 'id' in cpp, so we recommend returning the class instance pointer
 			static cocos2d::Scene* createScene();
@@ -31,4 +24,4 @@ namespace maskedsprite {
 
 }
 
-#endif // _MASKEDSPRITE_MAIN_MENU_SCENE_H_
+#endif // _CLIPSPRITE_MAIN_MENU_SCENE_H_

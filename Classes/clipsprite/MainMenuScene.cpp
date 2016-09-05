@@ -1,7 +1,7 @@
-#include "maskedsprite\MainMenuScene.h"
+#include "clipsprite\MainMenuScene.h"
 
 USING_NS_CC;
-using namespace maskedsprite;
+using namespace clipsprite;
 
 Scene* MainMenuScene::createScene()
 {
@@ -28,17 +28,18 @@ bool MainMenuScene::init()
         return false;
     }
 
+	Size winSize = Director::getInstance()->getWinSize();
+
 	auto stencil = DrawNode::create();
 	stencil->drawSolidCircle(Vec2(0.0f, 0.0f), 50.0f, 0.0f, 32.0f, Color4F::GREEN);
 
 	// create the clipping node and set the stencil 
 	auto clipper = ClippingNode::create();
 	clipper->setStencil(stencil);
-	clipper->setPosition(Size::ZERO);
+	clipper->setPosition(Vec2(winSize.width / 2, winSize.height / 2));
 
 	// create the sprite, which should be clipped
-	auto sprite = Sprite::create();
-	sprite->setSpriteFrame("mysprite.png");
+	auto sprite = Sprite::create("maskedsprite/Default.png");
 
 	// add the sprite to the clipping node, so it can be clipped
 	clipper->addChild(sprite);

@@ -1,11 +1,13 @@
 #include "main.h"
 // #include "tiledsprite\AppDelegate.h"
 // #include "maskedsprite\AppDelegate.h"
-#include "clipsprite\AppDelegate.h"
+// #include "clipsprite\AppDelegate.h"
+// #include "squishybox2d\AppDelegate.h"
+#include "drawsprite\AppDelegate.h"
 #include "cocos2d.h"
 
 USING_NS_CC;
-using namespace clipsprite;
+// using namespace squishybox2d;
 
 #if _MSC_VER > 1800
 #pragma comment(lib,"libcocos2d_2015.lib")

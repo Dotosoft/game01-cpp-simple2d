@@ -21,17 +21,20 @@ namespace drawsprite {
 			CREATE_FUNC(MainMenuScene);
 
 			void useDrawNode();
-			void onDraw(const cocos2d::Mat4 &transform, uint32_t flags);
+			// void onDraw(const cocos2d::Mat4 &transform, uint32_t flags);
+			// Sprite* spriteWithColor(Color4F bgColor, float textureWidth, float textureHeight);
+			Sprite* spriteWithColorCustom(Color4F bgColor, float textureWidth, float textureHeight);
+			void onDrawSprite();
 
 		private:
 			CustomCommand _customCmd;
-			virtual	void draw(cocos2d::Renderer* renderer, const cocos2d::Mat4 &transform, uint32_t flags) {
+			/* virtual	void draw(cocos2d::Renderer* renderer, const cocos2d::Mat4 &transform, uint32_t flags) {
 				cocos2d::Layer::draw(renderer, transform, flags);
 
 				_customCmd.init(_globalZOrder);
 				_customCmd.func = CC_CALLBACK_0(MainMenuScene::onDraw, this, transform, flags);
 				renderer->addCommand(&_customCmd);
-			}
+			} */
 	};
 
 }

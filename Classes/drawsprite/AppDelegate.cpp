@@ -47,6 +47,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
         director->setOpenGLView(glview);
     }
 
+	FileUtils::getInstance()->addSearchPath("maskedsprite");
+
     // turn on display FPS
     director->setDisplayStats(true);
 

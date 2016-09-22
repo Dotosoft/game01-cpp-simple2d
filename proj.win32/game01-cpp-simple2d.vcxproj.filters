@@ -27,6 +27,9 @@
     <ClCompile Include="..\Classes\drawsprite\DrawSprite.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\drawsprite\GameGlobals.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -39,6 +42,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\drawsprite\DrawSprite.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\drawsprite\GameGlobals.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

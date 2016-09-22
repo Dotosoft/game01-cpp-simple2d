@@ -29,12 +29,13 @@ bool MainMenuScene::init()
         return false;
     }
 
-	auto winSize = Director::getInstance()->getWinSize();
+	texture = Sprite::create("Default.png")->getTexture();
 
 	// useDrawNode();
 
+	auto winSize = Director::getInstance()->getWinSize();
 	auto drawSprite = new DrawSprite();
-	auto mySprite = drawSprite->createSprite04(Color4F::GREEN, winSize.width, winSize.height);
+	auto mySprite = drawSprite->createSprite05(winSize.width, winSize.height);
 	mySprite->setAnchorPoint(Vec2(0.5, 0.5));
 	mySprite->setPosition(Vec2(winSize.width / 2, winSize.height / 2));
 	this->addChild(mySprite);
@@ -79,3 +80,62 @@ void MainMenuScene::onDraw(const cocos2d::Mat4 &transform, uint32_t flags)
 	//add your primitive drawing code here
 	cocos2d::DrawPrimitives::drawLine(Vec2(0, 0), Vec2(100, 100));
 }
+
+//void MainMenuScene::onDrawPolygon(const cocos2d::Mat4 &transform, uint32_t flags) {
+//	//kmGLPushMatrix();
+//	//kmGLLoadMatrix(&transform);
+//
+//	//draw
+//	if (areaTrianglePointCount <= 1)
+//		return;
+//
+//	CC_NODE_DRAW_SETUP();
+//
+//
+//	cocos2d::GL::bindTexture2D(texture->getName());
+//
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//
+//	GL::blendFunc(blendFunc.src, blendFunc.dst);
+//
+//	GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION | GL::VERTEX_ATTRIB_FLAG_TEX_COORD);
+//
+//	if (sizeof(Point) == sizeof(Vec2)) {
+//
+//		glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_POSITION, 2, GL_FLOAT, GL_FALSE, 0, areaTrianglePoints);
+//		glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_TEX_COORDS, 2, GL_FLOAT, GL_FALSE, 0, textureCoordinates);
+//		glDrawArrays(GL_TRIANGLES, 0, (GLsizei)areaTrianglePointCount);
+//
+//	}
+//	else {
+//		Vec2* newAreaTrianglePoints = new Vec2[areaTrianglePointCount];
+//		Vec2* newTextureCoordinates = new Vec2[areaTrianglePointCount];
+//
+//		if (newAreaTrianglePoints != NULL && newTextureCoordinates != NULL) {
+//
+//			for (unsigned int i = 0; i < areaTrianglePointCount; i++) {
+//				newTextureCoordinates[i].x = textureCoordinates[i].x;
+//				newTextureCoordinates[i].y = textureCoordinates[i].y;
+//
+//				newAreaTrianglePoints[i].x = areaTrianglePoints[i].x;
+//				newAreaTrianglePoints[i].y = areaTrianglePoints[i].y;
+//			}
+//			glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_POSITION, 2, GL_FLOAT, GL_FALSE, 0, newAreaTrianglePoints);
+//			glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_TEX_COORDS, 2, GL_FLOAT, GL_FALSE, 0, newTextureCoordinates);
+//			//glDrawArrays(GL_TRIANGLE_STRIP, 0, (GLsizei)areaTrianglePointCount);
+//
+//			short indices1[] = { 0, 1, 2 };
+//			short indices2[] = { 3, 4, 5 };
+//			glDrawElements(GL_TRIANGLES, 3, GL_SHORT, indices1);
+//			glDrawElements(GL_TRIANGLES, 3, GL_SHORT, indices2);
+//
+//
+//
+//			CC_SAFE_DELETE_ARRAY(newAreaTrianglePoints);
+//			CC_SAFE_DELETE_ARRAY(newTextureCoordinates);
+//		}
+//	}
+//
+//	CC_INCREMENT_GL_DRAWS(1);
+//}

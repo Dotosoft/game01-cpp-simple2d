@@ -22,14 +22,18 @@ namespace drawsprite {
 
 			void useDrawNode();
 			void onDraw(const cocos2d::Mat4 &transform, uint32_t flags);
+			// void onDrawPolygon(const cocos2d::Mat4 &transform, uint32_t flags);
 
 		private:
+			Texture2D *texture;
+			int areaTrianglePointCount = 6000;
 			CustomCommand _customCmd;
 			virtual	void draw(cocos2d::Renderer* renderer, const cocos2d::Mat4 &transform, uint32_t flags) {
 				cocos2d::Layer::draw(renderer, transform, flags);
 
 				_customCmd.init(_globalZOrder);
 				_customCmd.func = CC_CALLBACK_0(MainMenuScene::onDraw, this, transform, flags);
+				// _customCmd.func = CC_CALLBACK_0(MainMenuScene::onDrawPolygon, this, transform, flags);
 				renderer->addCommand(&_customCmd);
 			} 
 	};
